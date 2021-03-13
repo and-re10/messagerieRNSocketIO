@@ -1,7 +1,8 @@
 const app = require('express')();
 const server = require('http').createServer(app);
 const io = require("socket.io")(server)
-const port = 3000;
+const PORT = process.env.PORT || 3020
+
 
 
 io.on("connection", socket => {
@@ -15,4 +16,4 @@ io.on("connection", socket => {
     })
 });
 
-server.listen(port, () => console.log("Server running on port: " + port))
+server.listen(PORT, () => console.log("Server running on port: " + PORT))
